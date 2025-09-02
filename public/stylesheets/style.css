@@ -1,0 +1,140 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f1e7f8;
+  color: #333;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  color: #736fc9;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+header .btn {
+  background: white;
+  color: #4f46e5;
+  padding: 8px 12px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+header a.btn:hover {
+  background: #e0e7ff;
+}
+
+.notes-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 30px 40px;
+}
+
+.note-card {
+  background: white;
+  max-width: 250px;
+  flex: 1 1 200px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.note-card:hover {
+  transform: translateY(-5px);
+}
+
+.note-card>div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.note-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.note-actions a {
+  text-decoration: none;
+  color: #736fc9;
+  font-weight: bold;
+  transition: 0.3ms;
+}
+
+.note-actions a:hover {
+  color: #8783c4;
+}
+
+.note-card h3 {
+  font-size: 1.4rem;
+  color: #132f95;
+}
+
+.note-card p {
+  font-size: 0.95rem;
+  color: #555;
+
+}
+
+
+.note-form {
+  background: white;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.note-form input,
+.note-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.note-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.note-form button {
+  background: #4f46e5;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.note-form button:hover {
+  background: #3730a3;
+}

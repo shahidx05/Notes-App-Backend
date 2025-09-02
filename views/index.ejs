@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Notes App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+  <header>
+    <h1><i class="fa-regular fa-file-lines"></i>My Notes</h1>
+    <a href="/create" class="btn">+ Add Note</a>
+  </header>
+
+  <main>
+    <div class="notes-container">
+      <%notes.slice().reverse().forEach(note=>{%>
+        <div class="note-card">
+          <div>
+            <h3>
+              <%=note.title%>
+            </h3>
+            <div class="note-actions">
+              <a href="/edit/<%=note._id%>" class="edit-btn"><i class="fa-solid fa-pen"></i></a>
+              <a href="/delete/<%=note._id%>" class="delete-btn"><i class="fa-solid fa-trash"></i></a>
+            </div>
+          </div>
+          <p>
+            <%=note.content%>
+          </p>
+        </div>
+        <%})%>
+    </div>
+  </main>
+</body>
+
+</html>
