@@ -17,24 +17,34 @@
   </header>
 
   <main>
-    <div class="notes-container">
-      <%notes.slice().reverse().forEach(note=>{%>
-        <div class="note-card">
-          <div>
-            <h3>
-              <%=note.title%>
-            </h3>
-            <div class="note-actions">
-              <a href="/edit/<%=note._id%>" class="edit-btn"><i class="fa-solid fa-pen"></i></a>
-              <a href="/delete/<%=note._id%>" class="delete-btn"><i class="fa-solid fa-trash"></i></a>
+    <% if (notes.length===0) { %>
+      <p style="text-align:center; margin-top:50px;">No notes yet. <a href="/create">Create one</a>!</p>
+      <% } %>
+
+        <div class="notes-container">
+          <%notes.slice().reverse().forEach(note=>{%>
+            <div class="note-card">
+              <!-- <p class="note-date">
+                  <i class="fa-regular fa-calendar"></i>
+                  <%= note.createdAt.toDateString() %>
+                </p> -->
+              <div>
+                <h3>
+                  <%=note.title%>
+                </h3>
+                <div class="note-actions">
+                  <a href="/edit/<%=note._id%>" class="edit-btn"><i class="fa-solid fa-pen"></i></a>
+                  <a href="/delete/<%=note._id%>" class="delete-btn"><i class="fa-solid fa-trash"></i></a>
+                </div>
+              </div>
+              
+              <p class="note-preview">
+                <%= note.content.length> 120 ? note.content.substring(0, 120) + "..." :note.content %>
+              </p>
+              <a href="/show/<%=note._id%>" class="read-more">Read more..</a>
             </div>
-          </div>
-          <p>
-            <%=note.content%>
-          </p>
+            <%})%>
         </div>
-        <%})%>
-    </div>
   </main>
 </body>
 

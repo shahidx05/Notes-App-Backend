@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://shahidx05:2005%40Shahid@cluster0.rrnfc1t.mongodb.net/notes?retryWrites=true&w=majority')
+require('dotenv').config();
+mongoose.connect(process.env.MONGO_URI);
 const noteSchema = new mongoose.Schema(
   {
     title: String,
